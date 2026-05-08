@@ -31,13 +31,14 @@ export default function FlagChecker() {
     if (!form.orgName || !form.key.trim()) return;
     setLoading(true);
     setError('');
-    setResult(null);
+    
     try {
       const { data } = await api.get('/flags/check', {
         params: { orgName: form.orgName, key: form.key.trim() },
       });
       setResult(data);
     } catch (err) {
+      setResult(null);
       setError(err.response?.data?.message || 'Could not check feature flag');
     } finally {
       setLoading(false);

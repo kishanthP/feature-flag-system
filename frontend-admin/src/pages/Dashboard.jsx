@@ -213,10 +213,9 @@ export default function Dashboard() {
         <DialogTitle fontWeight={700}>Add Feature Flag</DialogTitle>
         <DialogContent sx={{ display: 'flex', flexDirection: 'column', gap: 2, pt: 2 }}>
           <TextField
-            id="new-flag-key" label="Feature Key" fullWidth autoFocus
+            id="new-flag-key" placeholder="Feature Key" fullWidth autoFocus
             value={form.key}
             onChange={(e) => setForm({ ...form, key: e.target.value })}
-            placeholder="e.g. dark_mode"
             helperText="Keys are stored in lowercase (e.g. dark_mode, new_checkout)"
           />
           <TextField
